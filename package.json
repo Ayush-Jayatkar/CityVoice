@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "cloudinary-core": "^2.13.1",
+    "cloudinary-react": "^1.8.1",
+    "gapi-script": "^1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.4.0"

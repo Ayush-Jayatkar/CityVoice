@@ -5,6 +5,11 @@ import "./Home.css"; // Import the separate CSS file
 const Home = () => {
   const navigate = useNavigate();
 
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    navigate('/admin-dash');
+  };
+
   return (
     <div className="home-container">
       {/* Navigation Bar */}
@@ -36,7 +41,7 @@ const Home = () => {
           </div>
           <div className="hero-image-container">
             <img 
-              src="/images/Home1.png"
+              src="/images/Home1.png" // Change this path to your new image
               alt="City park with people walking" 
               className="hero-image"
             />
@@ -127,7 +132,7 @@ const Home = () => {
             <div className="form-container">
               <h3 className="contact-title">Contact me</h3>
               
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={handleContactSubmit}>
                 <div className="form-row">
                   <div className="form-group">
                     <label className="form-label">First name</label>
@@ -155,7 +160,7 @@ const Home = () => {
             
             <div className="contact-image-container">
               <img 
-                src="/images/Home5.png" 
+                src="/images/Home5.png" // Change this path to your new image
                 alt="Customer service person with headset" 
                 className="contact-image"
               />

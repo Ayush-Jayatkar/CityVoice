@@ -5,6 +5,13 @@ import "./Home.css"; // Import the separate CSS file
 const Home = () => {
   const navigate = useNavigate();
 
+  const handleScroll = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleContactSubmit = (e) => {
     e.preventDefault();
     navigate('/admin-dash');
@@ -19,9 +26,9 @@ const Home = () => {
           <nav className="main-nav">
             <ul className="nav-list">
               <li><a href="#" className="nav-link">AboutUs</a></li>
-              <li><a href="#" className="nav-link">Services</a></li>
+              <li><a href="#" className="nav-link" onClick={() => handleScroll('services-section')}>Services</a></li>
               <li><a href="#" className="nav-link">News</a></li>
-              <li><a href="#" className="nav-link">Contact</a></li>
+              <li><a href="#" className="nav-link" onClick={() => handleScroll('contact-section')}>Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -50,7 +57,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="services-section">
+      <section id="services-section" className="services-section">
         <div className="services-container">
           <h3 className="section-title">Our Services</h3>
           
@@ -126,7 +133,7 @@ const Home = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="contact-section">
+      <section id="contact-section" className="contact-section">
         <div className="contact-container">
           <div className="contact-layout">
             <div className="form-container">

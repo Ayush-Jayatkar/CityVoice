@@ -91,8 +91,9 @@ const FileComplain = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!image) {
-            setError('Please upload an image');
+        // Validate required fields
+        if (!formData.title || !formData.description || !formData.category) {
+            setError('Please fill in all required fields.');
             return;
         }
 
@@ -104,7 +105,10 @@ const FileComplain = () => {
             Object.keys(formData).forEach(key => {
                 submitData.append(key, formData[key]);
             });
-            submitData.append('image', image);
+
+            if (image) {
+                submitData.append('image', image);
+            }
 
             const response = await fetch('http://localhost:5000/api/complaints', {
                 method: 'POST',
@@ -112,7 +116,8 @@ const FileComplain = () => {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to submit complaint');
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to submit complaint');
             }
 
             setFormData({

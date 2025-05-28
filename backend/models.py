@@ -12,3 +12,4 @@ class Complaint(db.Model):
     city = db.Column(db.String(100), nullable=True)
     zip_code = db.Column(db.String(20), nullable=True)
     image_url = db.Column(db.String(500), nullable=True)
+    status = db.Column(db.String(50), default='Pending')  # Add status column

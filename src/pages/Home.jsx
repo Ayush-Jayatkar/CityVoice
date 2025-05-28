@@ -25,7 +25,7 @@ const Home = () => {
           <h1 className="logo-text">CityVoice</h1>
           <nav className="main-nav">
             <ul className="nav-list">
-              <li><a href="#" className="nav-link">AboutUs</a></li>
+              <li><a href="/about" className="nav-link">AboutUs</a></li>
               <li><a href="#" className="nav-link" onClick={() => handleScroll('services-section')}>Services</a></li>
               <li><a href="#" className="nav-link">News</a></li>
               <li><a href="#" className="nav-link" onClick={() => handleScroll('contact-section')}>Contact</a></li>

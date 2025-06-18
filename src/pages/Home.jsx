@@ -14,7 +14,7 @@ const Home = () => {
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
-    navigate('/admin-dash');
+    navigate('/admin-home'); // Redirect to admin portal on form submission
   };
 
   return (
